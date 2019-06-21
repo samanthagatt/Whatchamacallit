@@ -8,19 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		D654E85F22BC761400477ADE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E85E22BC761400477ADE /* AppDelegate.swift */; };
-		D654E86422BC761400477ADE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D654E86222BC761400477ADE /* Main.storyboard */; };
 		D654E86622BC761400477ADE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D654E86522BC761400477ADE /* Assets.xcassets */; };
 		D654E86922BC761400477ADE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D654E86722BC761400477ADE /* LaunchScreen.storyboard */; };
 		D654E87122BC76C400477ADE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E87022BC76C400477ADE /* NetworkManager.swift */; };
 		D654E87322BC77C000477ADE /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E87222BC77C000477ADE /* Word.swift */; };
 		D654E87522BC8EC000477ADE /* Definition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E87422BC8EC000477ADE /* Definition.swift */; };
 		D654E87722BC91B100477ADE /* apiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E87622BC91B100477ADE /* apiKey.swift */; };
+		D654E87922BC93C400477ADE /* WordnikString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E87822BC93C400477ADE /* WordnikString.swift */; };
+		D654E88022BD078900477ADE /* DefinitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E87F22BD078900477ADE /* DefinitionController.swift */; };
+		D654E88222BD09C500477ADE /* WordnikEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E88122BD09C500477ADE /* WordnikEnum.swift */; };
+		D654E88522BD0C4100477ADE /* WordnikError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E88422BD0C4100477ADE /* WordnikError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D654E85B22BC761400477ADE /* Whatchamacallit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whatchamacallit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D654E85E22BC761400477ADE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D654E86322BC761400477ADE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D654E86522BC761400477ADE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D654E86822BC761400477ADE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D654E86A22BC761400477ADE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -28,6 +30,10 @@
 		D654E87222BC77C000477ADE /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		D654E87422BC8EC000477ADE /* Definition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Definition.swift; sourceTree = "<group>"; };
 		D654E87622BC91B100477ADE /* apiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apiKey.swift; sourceTree = "<group>"; };
+		D654E87822BC93C400477ADE /* WordnikString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordnikString.swift; sourceTree = "<group>"; };
+		D654E87F22BD078900477ADE /* DefinitionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionController.swift; sourceTree = "<group>"; };
+		D654E88122BD09C500477ADE /* WordnikEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordnikEnum.swift; sourceTree = "<group>"; };
+		D654E88422BD0C4100477ADE /* WordnikError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordnikError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,15 +68,66 @@
 			children = (
 				D654E87622BC91B100477ADE /* apiKey.swift */,
 				D654E85E22BC761400477ADE /* AppDelegate.swift */,
-				D654E87222BC77C000477ADE /* Word.swift */,
-				D654E87422BC8EC000477ADE /* Definition.swift */,
-				D654E87022BC76C400477ADE /* NetworkManager.swift */,
-				D654E86222BC761400477ADE /* Main.storyboard */,
+				D654E88322BD0A8C00477ADE /* Custom Managers */,
+				D654E87A22BCFF8600477ADE /* Models */,
+				D654E87E22BCFFD800477ADE /* Model Controllers */,
+				D654E87B22BCFFA400477ADE /* Wordnik API */,
+				D654E87C22BCFFC100477ADE /* Views */,
+				D654E87D22BCFFC800477ADE /* View Controllers */,
 				D654E86522BC761400477ADE /* Assets.xcassets */,
 				D654E86722BC761400477ADE /* LaunchScreen.storyboard */,
 				D654E86A22BC761400477ADE /* Info.plist */,
 			);
 			path = Whatchamacallit;
+			sourceTree = "<group>";
+		};
+		D654E87A22BCFF8600477ADE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D654E87222BC77C000477ADE /* Word.swift */,
+				D654E87422BC8EC000477ADE /* Definition.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D654E87B22BCFFA400477ADE /* Wordnik API */ = {
+			isa = PBXGroup;
+			children = (
+				D654E87822BC93C400477ADE /* WordnikString.swift */,
+				D654E88122BD09C500477ADE /* WordnikEnum.swift */,
+				D654E88422BD0C4100477ADE /* WordnikError.swift */,
+			);
+			path = "Wordnik API";
+			sourceTree = "<group>";
+		};
+		D654E87C22BCFFC100477ADE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D654E87D22BCFFC800477ADE /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		D654E87E22BCFFD800477ADE /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D654E87F22BD078900477ADE /* DefinitionController.swift */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		D654E88322BD0A8C00477ADE /* Custom Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D654E87022BC76C400477ADE /* NetworkManager.swift */,
+			);
+			path = "Custom Managers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,7 +190,6 @@
 			files = (
 				D654E86922BC761400477ADE /* LaunchScreen.storyboard in Resources */,
 				D654E86622BC761400477ADE /* Assets.xcassets in Resources */,
-				D654E86422BC761400477ADE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,25 +200,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D654E88522BD0C4100477ADE /* WordnikError.swift in Sources */,
 				D654E87522BC8EC000477ADE /* Definition.swift in Sources */,
 				D654E87722BC91B100477ADE /* apiKey.swift in Sources */,
 				D654E87122BC76C400477ADE /* NetworkManager.swift in Sources */,
+				D654E87922BC93C400477ADE /* WordnikString.swift in Sources */,
+				D654E88022BD078900477ADE /* DefinitionController.swift in Sources */,
 				D654E85F22BC761400477ADE /* AppDelegate.swift in Sources */,
 				D654E87322BC77C000477ADE /* Word.swift in Sources */,
+				D654E88222BD09C500477ADE /* WordnikEnum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D654E86222BC761400477ADE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D654E86322BC761400477ADE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D654E86722BC761400477ADE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -6,18 +6,11 @@
 //  Copyright © 2019 Samantha Gatt. All rights reserved.
 //
 
-//
-//  NetworkManager.swift
-//
-//  Created by Samantha Gatt on 6/17/19.
-//  Copyright © 2019 Samantha Gatt. All rights reserved.
-//
-
 import UIKit
 
 extension NSError {
-    convenience init(code: Int, userInfo: [String: Any]? = nil) {
-        self.init(domain: Bundle.main.bundleIdentifier ?? "", code: code, userInfo: userInfo)
+    convenience init(code: Int) {
+        self.init(domain: Bundle.main.bundleIdentifier ?? "", code: code, userInfo: nil)
     }
 }
 
@@ -37,6 +30,7 @@ enum NetworkManager {
         case badURL
         case noNetworkResponse
         case dataTaskError(nsError: NSError)
+        case apiError(error: Error)
     }
     
     static func constructURL(baseURLString: String, appendingPaths: [String] = [], queries: [String: String] = [:]) -> URL? {
@@ -54,7 +48,7 @@ enum NetworkManager {
     }
     
     private static func dataTask<T: Decodable>(request: URLRequest, completion: @escaping (T?, NetworkError?) -> Void) {
-        URLSession.shared.dataTask(with: request) { data, response, error in
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
             DispatchQueue.main.async {
                 if let error = error {
                     completion(nil, .dataTaskError(nsError: error as NSError))
@@ -100,7 +94,7 @@ enum NetworkManager {
     }
     
     static func getImage(url: URL, completion: @escaping (UIImage?, NetworkError?) -> Void) {
-        URLSession.shared.dataTask(with: url) { data, response, error in
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
             DispatchQueue.main.async {
                 if let error = error {
                     completion(nil, .dataTaskError(nsError: error as NSError))
