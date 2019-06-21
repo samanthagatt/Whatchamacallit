@@ -21,11 +21,6 @@ class CreateAccountViewController: UIViewController {
     }
     
     func setupView() {
-        view.backgroundColor = .white
-        view.addSubview(mainView)
-        NSLayoutConstraint.activate([
-            mainView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            mainView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor)
-        ])
+        view = mainView
     }
 }
