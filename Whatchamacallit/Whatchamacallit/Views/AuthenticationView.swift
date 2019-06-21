@@ -10,8 +10,16 @@ import UIKit
 
 class AuthenticationView: UIView {
     
-    var label: UILabel = {
-        return ViewManager.label(text: "Hello world", font: .preferredFont(forTextStyle: .largeTitle), textColor: .black, textAlignment: .center)
+    private var appNameStackView: UIStackView = {
+        let appName = "Whatchamacallit"
+        var labels: [UILabel] = []
+        for char in appName {
+            labels.append(ViewManager.label(text: String(char), font: .systemFont(ofSize: 30, weight: .bold), textColor: .black))
+        }
+        labels.first?.textAlignment = .right
+        let stackView = UIStackView(arrangedSubviews: labels)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
     }()
     
     override init(frame: CGRect) {
@@ -29,16 +37,31 @@ class AuthenticationView: UIView {
     private func setupView() {
         translatesAutoresizingMaskIntoConstraints = false
 
-        addSubview(label)
+        backgroundColor = .white
+        
+        addSubview(appNameStackView)
         NSLayoutConstraint.activate([
-            label.centerXAnchor.constraint(equalTo: centerXAnchor),
-            label.centerYAnchor.constraint(equalTo: centerYAnchor),
-            label.widthAnchor.constraint(equalToConstant: 200),
-            label.heightAnchor.constraint(equalToConstant: label.sizeThatFits(CGSize(width: 200, height: 10000)).height),
-            label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            label.topAnchor.constraint(equalTo: topAnchor, constant: 16),
-            label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16)
+            appNameStackView.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
+            appNameStackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 200),
+            appNameStackView.widthAnchor.constraint(lessThanOrEqualTo: safeAreaLayoutGuide.widthAnchor, constant: -60)
         ])
+    }
+    
+    func animateAppName() {
+        var delay: TimeInterval = 0
+        for subview in appNameStackView.arrangedSubviews {
+            UIView.animate(withDuration: 0.5, delay: delay, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
+                subview.transform = CGAffineTransform(translationX: 0, y: -30)
+            }) { _ in
+                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+                    subview.transform = CGAffineTransform(translationX: 0, y: 10)
+                }) { _ in
+                    UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
+                        subview.transform = .identity
+                    })
+                }
+            }
+            delay += 0.1
+        }
     }
 }

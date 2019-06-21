@@ -16,6 +16,7 @@ enum ViewManager {
         if let attributedText = attributedText {
             label.attributedText = attributedText
         }
+        label.font = font
         label.textColor = textColor
         label.textAlignment = textAlignment
         label.lineBreakMode = lineBreakMode
