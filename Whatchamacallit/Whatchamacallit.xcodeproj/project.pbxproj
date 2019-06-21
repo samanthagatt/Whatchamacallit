@@ -21,6 +21,9 @@
 		D654E88522BD0C4100477ADE /* WordnikError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E88422BD0C4100477ADE /* WordnikError.swift */; };
 		D654E88722BD1E5800477ADE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D654E88622BD1E5800477ADE /* GoogleService-Info.plist */; };
 		D654E88922BD25FD00477ADE /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E88822BD25FD00477ADE /* AuthenticationView.swift */; };
+		D654E88B22BD28BD00477ADE /* ViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E88A22BD28BD00477ADE /* ViewManager.swift */; };
+		D654E89022BD31E700477ADE /* ThemedViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E88F22BD31E700477ADE /* ThemedViewManager.swift */; };
+		D654E89222BD35B300477ADE /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E89122BD35B300477ADE /* CreateAccountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +44,9 @@
 		D654E88422BD0C4100477ADE /* WordnikError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordnikError.swift; sourceTree = "<group>"; };
 		D654E88622BD1E5800477ADE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D654E88822BD25FD00477ADE /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		D654E88A22BD28BD00477ADE /* ViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewManager.swift; sourceTree = "<group>"; };
+		D654E88F22BD31E700477ADE /* ThemedViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedViewManager.swift; sourceTree = "<group>"; };
+		D654E89122BD35B300477ADE /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		FBAF150B766875BBB58B3814 /* Pods-Whatchamacallit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whatchamacallit.release.xcconfig"; path = "Target Support Files/Pods-Whatchamacallit/Pods-Whatchamacallit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +93,7 @@
 			children = (
 				D654E87622BC91B100477ADE /* apiKey.swift */,
 				D654E85E22BC761400477ADE /* AppDelegate.swift */,
+				D654E88C22BD2A4D00477ADE /* Extensions */,
 				D654E88322BD0A8C00477ADE /* Custom Managers */,
 				D654E87A22BCFF8600477ADE /* Models */,
 				D654E87E22BCFFD800477ADE /* Model Controllers */,
@@ -131,6 +138,7 @@
 		D654E87D22BCFFC800477ADE /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D654E89122BD35B300477ADE /* CreateAccountViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -147,8 +155,17 @@
 			isa = PBXGroup;
 			children = (
 				D654E87022BC76C400477ADE /* NetworkManager.swift */,
+				D654E88A22BD28BD00477ADE /* ViewManager.swift */,
+				D654E88F22BD31E700477ADE /* ThemedViewManager.swift */,
 			);
 			path = "Custom Managers";
+			sourceTree = "<group>";
+		};
+		D654E88C22BD2A4D00477ADE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		FC25AD7DF6A06A4420E77FDF /* Pods */ = {
@@ -295,8 +312,11 @@
 			files = (
 				D654E88522BD0C4100477ADE /* WordnikError.swift in Sources */,
 				D654E87522BC8EC000477ADE /* Definition.swift in Sources */,
+				D654E88B22BD28BD00477ADE /* ViewManager.swift in Sources */,
+				D654E89022BD31E700477ADE /* ThemedViewManager.swift in Sources */,
 				D654E87722BC91B100477ADE /* apiKey.swift in Sources */,
 				D654E87122BC76C400477ADE /* NetworkManager.swift in Sources */,
+				D654E89222BD35B300477ADE /* CreateAccountViewController.swift in Sources */,
 				D654E88922BD25FD00477ADE /* AuthenticationView.swift in Sources */,
 				D654E87922BC93C400477ADE /* WordnikString.swift in Sources */,
 				D654E88022BD078900477ADE /* DefinitionController.swift in Sources */,

@@ -18,18 +18,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         
-        DefinitionController().getRandomWordWithDefinition { (definitions, error) in
-            if let error = error {
-                print(error)
-                return
-            }
-            guard let word = definitions.first?.word else {
-                print("no word")
-                return
-            }
-            print("Word:", word)
-            print("Definitions:", definitions.compactMap { $0.attributedText })
-        }
+        /*
+         DefinitionController().getRandomWordWithDefinition { (definitions, error) in
+             if let error = error {
+                 print(error)
+                 return
+             }
+             guard let word = definitions.first?.word else {
+                 print("no word")
+                 return
+             }
+             print("Word:", word)
+             print("Definitions:", definitions.compactMap { $0.attributedText })
+         }
+         */
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        window?.rootViewController = CreateAccountViewController()
         
         return true
     }
