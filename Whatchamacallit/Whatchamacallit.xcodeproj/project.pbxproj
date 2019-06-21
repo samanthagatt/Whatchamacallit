@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		828C71FCC2CBF23B6CBCCE11 /* Pods_Whatchamacallit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C0807287F82ABB75F0A46BE /* Pods_Whatchamacallit.framework */; };
 		D654E85F22BC761400477ADE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E85E22BC761400477ADE /* AppDelegate.swift */; };
 		D654E86622BC761400477ADE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D654E86522BC761400477ADE /* Assets.xcassets */; };
 		D654E86922BC761400477ADE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D654E86722BC761400477ADE /* LaunchScreen.storyboard */; };
@@ -18,9 +19,13 @@
 		D654E88022BD078900477ADE /* DefinitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E87F22BD078900477ADE /* DefinitionController.swift */; };
 		D654E88222BD09C500477ADE /* WordnikEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E88122BD09C500477ADE /* WordnikEnum.swift */; };
 		D654E88522BD0C4100477ADE /* WordnikError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E88422BD0C4100477ADE /* WordnikError.swift */; };
+		D654E88722BD1E5800477ADE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D654E88622BD1E5800477ADE /* GoogleService-Info.plist */; };
+		D654E88922BD25FD00477ADE /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E88822BD25FD00477ADE /* AuthenticationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1112E4F5E9DAA0E6012C31DD /* Pods-Whatchamacallit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whatchamacallit.debug.xcconfig"; path = "Target Support Files/Pods-Whatchamacallit/Pods-Whatchamacallit.debug.xcconfig"; sourceTree = "<group>"; };
+		6C0807287F82ABB75F0A46BE /* Pods_Whatchamacallit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Whatchamacallit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D654E85B22BC761400477ADE /* Whatchamacallit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whatchamacallit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D654E85E22BC761400477ADE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D654E86522BC761400477ADE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -34,6 +39,9 @@
 		D654E87F22BD078900477ADE /* DefinitionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionController.swift; sourceTree = "<group>"; };
 		D654E88122BD09C500477ADE /* WordnikEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordnikEnum.swift; sourceTree = "<group>"; };
 		D654E88422BD0C4100477ADE /* WordnikError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordnikError.swift; sourceTree = "<group>"; };
+		D654E88622BD1E5800477ADE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D654E88822BD25FD00477ADE /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		FBAF150B766875BBB58B3814 /* Pods-Whatchamacallit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whatchamacallit.release.xcconfig"; path = "Target Support Files/Pods-Whatchamacallit/Pods-Whatchamacallit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +49,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				828C71FCC2CBF23B6CBCCE11 /* Pods_Whatchamacallit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6BE84063E456A731F04565BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6C0807287F82ABB75F0A46BE /* Pods_Whatchamacallit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D654E85222BC761400477ADE = {
 			isa = PBXGroup;
 			children = (
 				D654E85D22BC761400477ADE /* Whatchamacallit */,
 				D654E85C22BC761400477ADE /* Products */,
+				FC25AD7DF6A06A4420E77FDF /* Pods */,
+				6BE84063E456A731F04565BF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +96,7 @@
 				D654E86522BC761400477ADE /* Assets.xcassets */,
 				D654E86722BC761400477ADE /* LaunchScreen.storyboard */,
 				D654E86A22BC761400477ADE /* Info.plist */,
+				D654E88622BD1E5800477ADE /* GoogleService-Info.plist */,
 			);
 			path = Whatchamacallit;
 			sourceTree = "<group>";
@@ -103,6 +123,7 @@
 		D654E87C22BCFFC100477ADE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D654E88822BD25FD00477ADE /* AuthenticationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -130,6 +151,15 @@
 			path = "Custom Managers";
 			sourceTree = "<group>";
 		};
+		FC25AD7DF6A06A4420E77FDF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1112E4F5E9DAA0E6012C31DD /* Pods-Whatchamacallit.debug.xcconfig */,
+				FBAF150B766875BBB58B3814 /* Pods-Whatchamacallit.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,9 +167,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D654E86D22BC761400477ADE /* Build configuration list for PBXNativeTarget "Whatchamacallit" */;
 			buildPhases = (
+				411196EFFF4DB9E3660A308B /* [CP] Check Pods Manifest.lock */,
 				D654E85722BC761400477ADE /* Sources */,
 				D654E85822BC761400477ADE /* Frameworks */,
 				D654E85922BC761400477ADE /* Resources */,
+				2FBD9864A09DA936AAA5F48E /* [CP] Embed Pods Frameworks */,
+				A944B034BACA2A90C45C446E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -190,10 +223,70 @@
 			files = (
 				D654E86922BC761400477ADE /* LaunchScreen.storyboard in Resources */,
 				D654E86622BC761400477ADE /* Assets.xcassets in Resources */,
+				D654E88722BD1E5800477ADE /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2FBD9864A09DA936AAA5F48E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Whatchamacallit/Pods-Whatchamacallit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Whatchamacallit/Pods-Whatchamacallit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Whatchamacallit/Pods-Whatchamacallit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		411196EFFF4DB9E3660A308B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Whatchamacallit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A944B034BACA2A90C45C446E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Whatchamacallit/Pods-Whatchamacallit-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Whatchamacallit/Pods-Whatchamacallit-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Whatchamacallit/Pods-Whatchamacallit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D654E85722BC761400477ADE /* Sources */ = {
@@ -204,6 +297,7 @@
 				D654E87522BC8EC000477ADE /* Definition.swift in Sources */,
 				D654E87722BC91B100477ADE /* apiKey.swift in Sources */,
 				D654E87122BC76C400477ADE /* NetworkManager.swift in Sources */,
+				D654E88922BD25FD00477ADE /* AuthenticationView.swift in Sources */,
 				D654E87922BC93C400477ADE /* WordnikString.swift in Sources */,
 				D654E88022BD078900477ADE /* DefinitionController.swift in Sources */,
 				D654E85F22BC761400477ADE /* AppDelegate.swift in Sources */,
@@ -344,6 +438,7 @@
 		};
 		D654E86E22BC761400477ADE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1112E4F5E9DAA0E6012C31DD /* Pods-Whatchamacallit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -362,6 +457,7 @@
 		};
 		D654E86F22BC761400477ADE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBAF150B766875BBB58B3814 /* Pods-Whatchamacallit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
