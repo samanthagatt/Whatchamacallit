@@ -15,7 +15,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        
+        DefinitionController().getRandomWordWithDefinition { (definitions, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            guard let word = definitions.first?.word else {
+                print("no word")
+                return
+            }
+            print("Word:", word)
+            print("Definitions:", definitions.compactMap { $0.attributedText })
+        }
         
         return true
     }
