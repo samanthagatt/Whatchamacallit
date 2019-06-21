@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		D654E85F22BC761400477ADE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E85E22BC761400477ADE /* AppDelegate.swift */; };
-		D654E86122BC761400477ADE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E86022BC761400477ADE /* ViewController.swift */; };
 		D654E86422BC761400477ADE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D654E86222BC761400477ADE /* Main.storyboard */; };
 		D654E86622BC761400477ADE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D654E86522BC761400477ADE /* Assets.xcassets */; };
 		D654E86922BC761400477ADE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D654E86722BC761400477ADE /* LaunchScreen.storyboard */; };
+		D654E87122BC76C400477ADE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E87022BC76C400477ADE /* NetworkManager.swift */; };
+		D654E87322BC77C000477ADE /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E87222BC77C000477ADE /* Word.swift */; };
+		D654E87522BC8EC000477ADE /* Definition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E87422BC8EC000477ADE /* Definition.swift */; };
+		D654E87722BC91B100477ADE /* apiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E87622BC91B100477ADE /* apiKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D654E85B22BC761400477ADE /* Whatchamacallit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whatchamacallit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D654E85E22BC761400477ADE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D654E86022BC761400477ADE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D654E86322BC761400477ADE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D654E86522BC761400477ADE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D654E86822BC761400477ADE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D654E86A22BC761400477ADE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D654E87022BC76C400477ADE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		D654E87222BC77C000477ADE /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		D654E87422BC8EC000477ADE /* Definition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Definition.swift; sourceTree = "<group>"; };
+		D654E87622BC91B100477ADE /* apiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apiKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +60,11 @@
 		D654E85D22BC761400477ADE /* Whatchamacallit */ = {
 			isa = PBXGroup;
 			children = (
+				D654E87622BC91B100477ADE /* apiKey.swift */,
 				D654E85E22BC761400477ADE /* AppDelegate.swift */,
-				D654E86022BC761400477ADE /* ViewController.swift */,
+				D654E87222BC77C000477ADE /* Word.swift */,
+				D654E87422BC8EC000477ADE /* Definition.swift */,
+				D654E87022BC76C400477ADE /* NetworkManager.swift */,
 				D654E86222BC761400477ADE /* Main.storyboard */,
 				D654E86522BC761400477ADE /* Assets.xcassets */,
 				D654E86722BC761400477ADE /* LaunchScreen.storyboard */,
@@ -135,8 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D654E86122BC761400477ADE /* ViewController.swift in Sources */,
+				D654E87522BC8EC000477ADE /* Definition.swift in Sources */,
+				D654E87722BC91B100477ADE /* apiKey.swift in Sources */,
+				D654E87122BC76C400477ADE /* NetworkManager.swift in Sources */,
 				D654E85F22BC761400477ADE /* AppDelegate.swift in Sources */,
+				D654E87322BC77C000477ADE /* Word.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

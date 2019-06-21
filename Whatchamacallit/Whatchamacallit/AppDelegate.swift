@@ -13,9 +13,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    let baseURLString = "https://api.wordnik.com/v4"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        NetworkManager.makeRequest(baseURLString: baseURLString, appendingPaths: ["words.json", "randomWord"], queries: ["hasDictionaryDef": "true", "api_key": apiKey]) { (word: Word?, error) in
+            
+            guard let wordName = word?.word else { print("No word name"); return }
+            
+            NetworkManager.makeRequest(baseURLString: self.baseURLString, appendingPaths: ["word.json", wordName, "definitions"], queries: ["limit": "200", "sourceDictionaries": "all", "api_key": apiKey]) { (definitions: [Definition]?, error) in
+                
+                print("Word:", definitions?.first?.word ?? "no word")
+                print("Definition:", definitions?.first?.attributedText ?? "no attributed text")
+            }
+        }
+        
         return true
     }
 
