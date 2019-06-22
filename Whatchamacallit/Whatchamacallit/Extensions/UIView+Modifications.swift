@@ -30,11 +30,10 @@ extension UIView {
          - shadowOffset: The offset (in points) of the layer’s shadow. Animatable.
          - shadowColor: The color of the layer’s shadow. Animatable.
          - shadowPath: The shape of the layer’s shadow. Animatable.
-         - translatesMask: A Boolean value that determines whether the view’s autoresizing mask is translated into Auto Layout constraints.
      - Returns: The original view after styling as a discardable result
      */
     @discardableResult
-    func addStyling(backgroundColor: UIColor = .clear, alpha: CGFloat = 1, clipsToBounds: Bool = false, mask: UIView? = nil, cornerRadius: CGFloat = 0, borderWidth: CGFloat = 0, borderColor: UIColor = .clear, shadowOpacity: Float = 0, shadowRadius: CGFloat = 0, shadowOffset: CGSize = .zero, shadowColor: UIColor? = nil, shadowPath: CGPath? = nil, translatesMask: Bool = false) -> Self {
+    func addStyling(backgroundColor: UIColor = .clear, alpha: CGFloat = 1, clipsToBounds: Bool = false, mask: UIView? = nil, cornerRadius: CGFloat = 0, borderWidth: CGFloat = 0, borderColor: UIColor = .clear, shadowOpacity: Float = 0, shadowRadius: CGFloat = 0, shadowOffset: CGSize = .zero, shadowColor: UIColor? = nil, shadowPath: CGPath? = nil) -> Self {
         self.backgroundColor = backgroundColor
         self.alpha = alpha
         self.clipsToBounds = clipsToBounds
@@ -47,7 +46,6 @@ extension UIView {
         self.layer.shadowOffset = shadowOffset
         self.layer.shadowColor = shadowColor?.cgColor
         self.layer.shadowPath = shadowPath
-        self.translatesAutoresizingMaskIntoConstraints = translatesMask
         return self
     }
 }

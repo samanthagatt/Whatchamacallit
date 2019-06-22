@@ -18,12 +18,16 @@ class AuthenticationView: UIView {
     var whatchamacallitHeightConstraint: NSLayoutConstraint?
     
     var usernameTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "Username"
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        return textField
+        return ViewManager.textField(placeholder: "Username", borderStyle: .roundedRect, textContentType: .username)
     }()
     var usernameWidthConstraint: NSLayoutConstraint?
+    var usernameHeightContraint: NSLayoutConstraint?
+    
+    var passwordTextField: UITextField = {
+        return ViewManager.textField(placeholder: "Password", borderStyle: .roundedRect, textContentType: .password, isSecureTextEntry: true)
+    }()
+    var passwordWidthConstraint: NSLayoutConstraint?
+    var passwordHeightContraint: NSLayoutConstraint?
     
     var scrollView: UIScrollView = {
         var scrollView = UIScrollView()
@@ -56,7 +60,7 @@ class AuthenticationView: UIView {
         backgroundColor = .white
         
         addSubview(scrollView)
-        scrollView.addSubviews(whatchamacallitLabel, usernameTextField)
+        scrollView.addSubviews(whatchamacallitLabel, usernameTextField, passwordTextField)
         
         constrainViews()
     }
@@ -72,6 +76,9 @@ class AuthenticationView: UIView {
             
             usernameTextField.topAnchor.constraint(equalTo: whatchamacallitLabel.bottomAnchor, constant: 50),
             usernameTextField.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            
+            passwordTextField.topAnchor.constraint(equalTo: usernameTextField.bottomAnchor, constant: 20),
+            passwordTextField.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor)
         ])
         
         whatchamacallitTopConstraint = whatchamacallitLabel.topAnchor.constraint(equalTo: scrollView.topAnchor)
@@ -79,8 +86,12 @@ class AuthenticationView: UIView {
         whatchamacallitHeightConstraint = whatchamacallitLabel.heightAnchor.constraint(equalToConstant: 0)
         
         usernameWidthConstraint = usernameTextField.widthAnchor.constraint(equalToConstant: 0)
+        usernameHeightContraint = usernameTextField.heightAnchor.constraint(equalToConstant: 0)
         
-        let constraints = [whatchamacallitTopConstraint, whatchamacallitWidthConstraint, whatchamacallitHeightConstraint, usernameWidthConstraint]
+        passwordWidthConstraint = passwordTextField.widthAnchor.constraint(equalToConstant: 0)
+        passwordHeightContraint = passwordTextField.heightAnchor.constraint(equalToConstant: 0)
+        
+        let constraints = [whatchamacallitTopConstraint, whatchamacallitWidthConstraint, whatchamacallitHeightConstraint, usernameWidthConstraint, passwordWidthConstraint, passwordWidthConstraint]
         NSLayoutConstraint.activate(constraints.compactMap { $0 })
     }
     
@@ -91,7 +102,11 @@ class AuthenticationView: UIView {
         whatchamacallitHeightConstraint?.constant = whatchamacallitLabel.sizeThatFits(CGSize(width: contentWidth, height: 10000)).height
         
         let preferredTextFieldWidth: CGFloat = 300
-        let textFieldWidth: CGFloat = contentWidth >= preferredTextFieldWidth ? contentWidth : preferredTextFieldWidth
+        let textFieldWidth: CGFloat = contentWidth >= preferredTextFieldWidth ? preferredTextFieldWidth : contentWidth
         usernameWidthConstraint?.constant = textFieldWidth
+        usernameHeightContraint?.constant = usernameTextField.sizeThatFits(CGSize(width: textFieldWidth, height: 10000)).height
+        
+        passwordWidthConstraint?.constant = textFieldWidth
+        passwordHeightContraint?.constant = passwordTextField.sizeThatFits(CGSize(width: textFieldWidth, height: 10000)).height
     }
 }
