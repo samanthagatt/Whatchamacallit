@@ -10,12 +10,26 @@ import UIKit
 
 class AuthenticationView: UIView {
     
-    var label: UILabel = {
-        return ViewManager.label(text: "Hello world", font: .preferredFont(forTextStyle: .largeTitle), textColor: .black, textAlignment: .center)
+    var whatchamacallitLabel: UILabel = {
+        return ViewManager.label(text: "Whatchamacallit", font: .preferredFont(forTextStyle: .largeTitle), textColor: .black, textAlignment: .center)
     }()
+    var whatchamacallitTopConstraint: NSLayoutConstraint?
+    var whatchamacallitWidthConstraint: NSLayoutConstraint?
+    var whatchamacallitHeightConstraint: NSLayoutConstraint?
     
-    var labelWidthConstraint: NSLayoutConstraint?
-    var labelHeightConstraint: NSLayoutConstraint?
+    var usernameTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Username"
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    var usernameWidthConstraint: NSLayoutConstraint?
+    
+    var scrollView: UIScrollView = {
+        var scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,10 +46,8 @@ class AuthenticationView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let contentWidth = frame.width - 30
-        labelWidthConstraint?.constant = contentWidth
-        labelHeightConstraint?.constant = label.sizeThatFits(CGSize(width: contentWidth, height: 10000)).height
-        
+        updateViewConstraints()
+        scrollView.updateContentHeight()
     }
     
     private func setupView() {
@@ -43,15 +55,43 @@ class AuthenticationView: UIView {
         
         backgroundColor = .white
         
-        addSubview(label)
+        addSubview(scrollView)
+        scrollView.addSubviews(whatchamacallitLabel, usernameTextField)
+        
+        constrainViews()
+    }
+    
+    private func constrainViews() {
         NSLayoutConstraint.activate([
-            label.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
-            label.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor)
+            scrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            
+            whatchamacallitLabel.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            
+            usernameTextField.topAnchor.constraint(equalTo: whatchamacallitLabel.bottomAnchor, constant: 50),
+            usernameTextField.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
         ])
         
-        labelWidthConstraint = label.widthAnchor.constraint(equalToConstant: 0)
-        labelWidthConstraint?.isActive = true
-        labelHeightConstraint = label.heightAnchor.constraint(equalToConstant: 0)
-        labelHeightConstraint?.isActive = true
+        whatchamacallitTopConstraint = whatchamacallitLabel.topAnchor.constraint(equalTo: scrollView.topAnchor)
+        whatchamacallitWidthConstraint = whatchamacallitLabel.widthAnchor.constraint(equalToConstant: 0)
+        whatchamacallitHeightConstraint = whatchamacallitLabel.heightAnchor.constraint(equalToConstant: 0)
+        
+        usernameWidthConstraint = usernameTextField.widthAnchor.constraint(equalToConstant: 0)
+        
+        let constraints = [whatchamacallitTopConstraint, whatchamacallitWidthConstraint, whatchamacallitHeightConstraint, usernameWidthConstraint]
+        NSLayoutConstraint.activate(constraints.compactMap { $0 })
+    }
+    
+    private func updateViewConstraints() {
+        let contentWidth = scrollView.frame.width - 100
+        whatchamacallitTopConstraint?.constant = safeAreaLayoutGuide.layoutFrame.height * 0.2
+        whatchamacallitWidthConstraint?.constant = contentWidth
+        whatchamacallitHeightConstraint?.constant = whatchamacallitLabel.sizeThatFits(CGSize(width: contentWidth, height: 10000)).height
+        
+        let preferredTextFieldWidth: CGFloat = 300
+        let textFieldWidth: CGFloat = contentWidth >= preferredTextFieldWidth ? contentWidth : preferredTextFieldWidth
+        usernameWidthConstraint?.constant = textFieldWidth
     }
 }

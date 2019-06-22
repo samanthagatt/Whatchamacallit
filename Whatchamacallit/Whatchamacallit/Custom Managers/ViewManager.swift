@@ -10,7 +10,22 @@ import UIKit
 
 enum ViewManager {
     
-    static func label(text: String? = nil, attributedText: NSAttributedString? = nil, font: UIFont, textColor: UIColor, textAlignment: NSTextAlignment = .natural, lineBreakMode: NSLineBreakMode = .byTruncatingTail, numberOfLines: Int = 0, backgroundColor: UIColor = .clear, alpha: CGFloat = 1, tintColor: UIColor? = nil, clipsToBounds: Bool = true, mask: UIView? = nil, cornerRadius: CGFloat = 0, borderWidth: CGFloat = 0, borderColor: UIColor = .clear, shadowOpacity: Float = 0, shadowRadius: CGFloat = 0, shadowOffset: CGSize = .zero, shadowColor: UIColor? = nil, shadowPath: CGPath? = nil) -> UILabel {
+    /**
+     Creates a customized UILabel
+     
+     Use this function when creating a new label
+     - Note: Chain `addStyling()` `UIView` instance method to customize UIView properties as well
+     - Author: Samantha Gatt
+     - Parameters:
+         - text: The current text that is displayed by the label.
+         - attributedText: The current styled text that is displayed by the label.
+         - font: The font used to display the text.
+         - textColor: The color of the text.
+         - textAlignment: The technique to use for aligning the text.
+         - lineBreakMode: The technique to use for wrapping and truncating the label’s text.
+         - numberOfLines: The maximum number of lines to use for rendering text.
+     */
+    static func label(text: String? = nil, attributedText: NSAttributedString? = nil, font: UIFont, textColor: UIColor, textAlignment: NSTextAlignment = .natural, lineBreakMode: NSLineBreakMode = .byTruncatingTail, numberOfLines: Int = 0) -> UILabel {
         let label = UILabel()
         label.text = text
         if let attributedText = attributedText {
@@ -20,23 +35,13 @@ enum ViewManager {
         label.textColor = textColor
         label.textAlignment = textAlignment
         label.lineBreakMode = lineBreakMode
-        addStyling(to: label, backgroundColor: backgroundColor, alpha: alpha, clipsToBounds: clipsToBounds, mask: mask, cornerRadius: cornerRadius, borderWidth: borderWidth, borderColor: borderColor, shadowOpacity: shadowOpacity, shadowRadius: shadowRadius, shadowOffset: shadowOffset, shadowColor: shadowColor, shadowPath: shadowPath)
+        label.numberOfLines = numberOfLines
         return label
     }
     
-    static func addStyling(to view: UIView, backgroundColor: UIColor = .clear, alpha: CGFloat = 1, clipsToBounds: Bool = false, mask: UIView? = nil, cornerRadius: CGFloat = 0, borderWidth: CGFloat = 0, borderColor: UIColor = .clear, shadowOpacity: Float = 0, shadowRadius: CGFloat = 0, shadowOffset: CGSize = .zero, shadowColor: UIColor? = nil, shadowPath: CGPath? = nil) {
-        view.backgroundColor = backgroundColor
-        view.alpha = alpha
-        view.clipsToBounds = clipsToBounds
-        view.mask = mask
-        view.layer.cornerRadius = cornerRadius
-        view.layer.borderWidth = borderWidth
-        view.layer.borderColor = borderColor.cgColor
-        view.layer.shadowOpacity = shadowOpacity
-        view.layer.shadowRadius = shadowRadius
-        view.layer.shadowOffset = shadowOffset
-        view.layer.shadowColor = shadowColor?.cgColor
-        view.layer.shadowPath = shadowPath
-        view.translatesAutoresizingMaskIntoConstraints = false
+    static func textField() -> UITextField {
+        let textField = UITextField()
+        
+        return textField
     }
 }

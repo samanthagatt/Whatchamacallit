@@ -24,6 +24,9 @@
 		D654E88B22BD28BD00477ADE /* ViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E88A22BD28BD00477ADE /* ViewManager.swift */; };
 		D654E89022BD31E700477ADE /* ThemedViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E88F22BD31E700477ADE /* ThemedViewManager.swift */; };
 		D654E89222BD35B300477ADE /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E89122BD35B300477ADE /* CreateAccountViewController.swift */; };
+		D654E89422BDC4AE00477ADE /* UIView+AddSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E89322BDC4AE00477ADE /* UIView+AddSubviews.swift */; };
+		D654E89822BE681D00477ADE /* UIScrollView+UpdateContentSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E89722BE681D00477ADE /* UIScrollView+UpdateContentSize.swift */; };
+		D654E89A22BE74A400477ADE /* UIView+Modifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E89922BE74A300477ADE /* UIView+Modifications.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,9 @@
 		D654E88A22BD28BD00477ADE /* ViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewManager.swift; sourceTree = "<group>"; };
 		D654E88F22BD31E700477ADE /* ThemedViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedViewManager.swift; sourceTree = "<group>"; };
 		D654E89122BD35B300477ADE /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		D654E89322BDC4AE00477ADE /* UIView+AddSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AddSubviews.swift"; sourceTree = "<group>"; };
+		D654E89722BE681D00477ADE /* UIScrollView+UpdateContentSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+UpdateContentSize.swift"; sourceTree = "<group>"; };
+		D654E89922BE74A300477ADE /* UIView+Modifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Modifications.swift"; sourceTree = "<group>"; };
 		FBAF150B766875BBB58B3814 /* Pods-Whatchamacallit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whatchamacallit.release.xcconfig"; path = "Target Support Files/Pods-Whatchamacallit/Pods-Whatchamacallit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -164,6 +170,9 @@
 		D654E88C22BD2A4D00477ADE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D654E89322BDC4AE00477ADE /* UIView+AddSubviews.swift */,
+				D654E89922BE74A300477ADE /* UIView+Modifications.swift */,
+				D654E89722BE681D00477ADE /* UIScrollView+UpdateContentSize.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -310,7 +319,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D654E89822BE681D00477ADE /* UIScrollView+UpdateContentSize.swift in Sources */,
 				D654E88522BD0C4100477ADE /* WordnikError.swift in Sources */,
+				D654E89A22BE74A400477ADE /* UIView+Modifications.swift in Sources */,
 				D654E87522BC8EC000477ADE /* Definition.swift in Sources */,
 				D654E88B22BD28BD00477ADE /* ViewManager.swift in Sources */,
 				D654E89022BD31E700477ADE /* ThemedViewManager.swift in Sources */,
@@ -318,6 +329,7 @@
 				D654E87122BC76C400477ADE /* NetworkManager.swift in Sources */,
 				D654E89222BD35B300477ADE /* CreateAccountViewController.swift in Sources */,
 				D654E88922BD25FD00477ADE /* AuthenticationView.swift in Sources */,
+				D654E89422BDC4AE00477ADE /* UIView+AddSubviews.swift in Sources */,
 				D654E87922BC93C400477ADE /* WordnikString.swift in Sources */,
 				D654E88022BD078900477ADE /* DefinitionController.swift in Sources */,
 				D654E85F22BC761400477ADE /* AppDelegate.swift in Sources */,
