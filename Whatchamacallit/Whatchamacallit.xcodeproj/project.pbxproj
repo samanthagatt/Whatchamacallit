@@ -27,6 +27,7 @@
 		D654E89422BDC4AE00477ADE /* UIView+AddSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E89322BDC4AE00477ADE /* UIView+AddSubviews.swift */; };
 		D654E89822BE681D00477ADE /* UIScrollView+UpdateContentSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E89722BE681D00477ADE /* UIScrollView+UpdateContentSize.swift */; };
 		D654E89A22BE74A400477ADE /* UIView+Modifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E89922BE74A300477ADE /* UIView+Modifications.swift */; };
+		D654E8BE22BF39FB00477ADE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654E8BD22BF39FB00477ADE /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		D654E89322BDC4AE00477ADE /* UIView+AddSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AddSubviews.swift"; sourceTree = "<group>"; };
 		D654E89722BE681D00477ADE /* UIScrollView+UpdateContentSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+UpdateContentSize.swift"; sourceTree = "<group>"; };
 		D654E89922BE74A300477ADE /* UIView+Modifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Modifications.swift"; sourceTree = "<group>"; };
+		D654E8BD22BF39FB00477ADE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FBAF150B766875BBB58B3814 /* Pods-Whatchamacallit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whatchamacallit.release.xcconfig"; path = "Target Support Files/Pods-Whatchamacallit/Pods-Whatchamacallit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				D654E89122BD35B300477ADE /* CreateAccountViewController.swift */,
+				D654E8BD22BF39FB00477ADE /* HomeViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				D654E89822BE681D00477ADE /* UIScrollView+UpdateContentSize.swift in Sources */,
 				D654E88522BD0C4100477ADE /* WordnikError.swift in Sources */,
 				D654E89A22BE74A400477ADE /* UIView+Modifications.swift in Sources */,
+				D654E8BE22BF39FB00477ADE /* HomeViewController.swift in Sources */,
 				D654E87522BC8EC000477ADE /* Definition.swift in Sources */,
 				D654E88B22BD28BD00477ADE /* ViewManager.swift in Sources */,
 				D654E89022BD31E700477ADE /* ThemedViewManager.swift in Sources */,
