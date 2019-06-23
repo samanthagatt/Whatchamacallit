@@ -97,13 +97,12 @@
 		D654E85D22BC761400477ADE /* Whatchamacallit */ = {
 			isa = PBXGroup;
 			children = (
-				D654E87622BC91B100477ADE /* apiKey.swift */,
 				D654E85E22BC761400477ADE /* AppDelegate.swift */,
 				D654E88C22BD2A4D00477ADE /* Extensions */,
-				D654E88322BD0A8C00477ADE /* Custom Managers */,
+				D654E88322BD0A8C00477ADE /* Managers */,
+				D654E87B22BCFFA400477ADE /* Wordnik API */,
 				D654E87A22BCFF8600477ADE /* Models */,
 				D654E87E22BCFFD800477ADE /* Model Controllers */,
-				D654E87B22BCFFA400477ADE /* Wordnik API */,
 				D654E87C22BCFFC100477ADE /* Views */,
 				D654E87D22BCFFC800477ADE /* View Controllers */,
 				D654E86522BC761400477ADE /* Assets.xcassets */,
@@ -126,6 +125,7 @@
 		D654E87B22BCFFA400477ADE /* Wordnik API */ = {
 			isa = PBXGroup;
 			children = (
+				D654E87622BC91B100477ADE /* apiKey.swift */,
 				D654E87822BC93C400477ADE /* WordnikString.swift */,
 				D654E88122BD09C500477ADE /* WordnikEnum.swift */,
 				D654E88422BD0C4100477ADE /* WordnikError.swift */,
@@ -157,14 +157,14 @@
 			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
-		D654E88322BD0A8C00477ADE /* Custom Managers */ = {
+		D654E88322BD0A8C00477ADE /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				D654E87022BC76C400477ADE /* NetworkManager.swift */,
 				D654E88A22BD28BD00477ADE /* ViewManager.swift */,
 				D654E88F22BD31E700477ADE /* ThemedViewManager.swift */,
 			);
-			path = "Custom Managers";
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		D654E88C22BD2A4D00477ADE /* Extensions */ = {
