@@ -21,6 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance()?.delegate = self
         
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            let vc = user != nil ? HomeViewController() : CreateAccountViewController()
+            let newWindow = UIWindow(frame: UIScreen.main.bounds)
+            newWindow.rootViewController = vc
+            newWindow.makeKeyAndVisible()
+            self.window = newWindow
+        }
+        
         /*
          DefinitionController().getRandomWordWithDefinition { (definitions, error) in
              if let error = error {
@@ -35,10 +43,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
              print("Definitions:", definitions.compactMap { $0.attributedText })
          }
          */
-        
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.makeKeyAndVisible()
-        window?.rootViewController = CreateAccountViewController()
         
         return true
     }
@@ -63,13 +67,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 print("THERE WAS AN ERROR SIGNING IN:", error)
                 return
             }
-            
-            self.window?.rootViewController = HomeViewController()
         }
     }
     
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error?) {
+        if let error = error {
+            print("THERE WAS AN ERROR SIGNING OUT:", error)
+            return
+        }
     }
 }
 
