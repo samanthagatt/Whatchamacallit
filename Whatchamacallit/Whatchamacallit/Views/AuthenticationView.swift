@@ -27,15 +27,22 @@ class AuthenticationView: UIView {
         return ViewManager.label(text: "Whatchamacallit", font: .preferredFont(forTextStyle: .largeTitle), textColor: .black, textAlignment: .center)
     }()
     
-    var usernameTextField: UITextField = {
-        return ViewManager.textField(placeholder: "Username", borderStyle: .roundedRect, textContentType: .username)
+    var emailTextField: UITextField = {
+        return ViewManager.textField(placeholder: "Email Address", borderStyle: .roundedRect, textContentType: .emailAddress, keyboardType: .emailAddress, autocapitalizationType: .none)
     }()
     
     var passwordTextField: UITextField = {
-        return ViewManager.textField(placeholder: "Password", borderStyle: .roundedRect, textContentType: .password, isSecureTextEntry: true)
+        return ViewManager.textField(placeholder: "Password", borderStyle: .roundedRect, isSecureTextEntry: true, autocapitalizationType: .none)
     }()
     
     var confirmPasswordTextField: UITextField?
+    
+    var submitButton: UIButton = {
+        let button = UIButton().addStyling(backgroundColor: .blue)
+        button.setTitleColor(.white, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
     
     var changeStateButton: UIButton = {
         let button = UIButton()
@@ -65,6 +72,7 @@ class AuthenticationView: UIView {
     
     var googleSignInButton: GIDSignInButton = {
         let button = GIDSignInButton()
+        button.style = .wide
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -98,10 +106,15 @@ class AuthenticationView: UIView {
         
         backgroundColor = .white
         
-        let buttonTitle = authState == .login ? "Don't have an account?\nSign up" : "Already have an account?\nSign in"
-        changeStateButton.setTitle(buttonTitle, for: .normal)
+        passwordTextField.textContentType = authState == .login ? .password : .newPassword
         
-        addSubviews(whatchamacallitLabel, usernameTextField, passwordTextField, changeStateButton, leadingDivider, orLabel, trailingDivider, googleSignInButton)
+        let changeStateButtonTitle = authState == .login ? "Don't have an account?\nSign up" : "Already have an account?\nSign in"
+        changeStateButton.setTitle(changeStateButtonTitle, for: .normal)
+        
+        let submitButtonTitle = authState == .login ? "Log In" : "Sign Up"
+        submitButton.setTitle(submitButtonTitle, for: .normal)
+        
+        addSubviews(whatchamacallitLabel, emailTextField, passwordTextField, submitButton, changeStateButton, leadingDivider, orLabel, trailingDivider, googleSignInButton)
         
         constrainViews()
     }
@@ -113,11 +126,11 @@ class AuthenticationView: UIView {
             whatchamacallitLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 50),
             whatchamacallitLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -50),
             
-            usernameTextField.topAnchor.constraint(equalTo: whatchamacallitLabel.bottomAnchor, constant: 50),
-            usernameTextField.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
-            usernameTextField.widthAnchor.constraint(equalToConstant: 300),
+            emailTextField.topAnchor.constraint(equalTo: whatchamacallitLabel.bottomAnchor, constant: 50),
+            emailTextField.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
+            emailTextField.widthAnchor.constraint(equalToConstant: 300),
             
-            passwordTextField.topAnchor.constraint(equalTo: usernameTextField.bottomAnchor, constant: 20),
+            passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 20),
             passwordTextField.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
             passwordTextField.widthAnchor.constraint(equalToConstant: 300)
         ])
@@ -125,7 +138,7 @@ class AuthenticationView: UIView {
         var bottomTextField = passwordTextField
         
         if authState == .createAccount {
-            let textField = ViewManager.textField(placeholder: "Confirm Password", borderStyle: .roundedRect, textContentType: .newPassword)
+            let textField = ViewManager.textField(placeholder: "Confirm Password", borderStyle: .roundedRect, textContentType: .newPassword, isSecureTextEntry: true, autocapitalizationType: .none)
             confirmPasswordTextField = textField
             bottomTextField = textField
             
@@ -135,16 +148,15 @@ class AuthenticationView: UIView {
             confirmPasswordTextField?.widthAnchor.constraint(equalToConstant: 300).isActive = true
         }
         
-        let orLabelSize = orLabel.sizeThatFits(CGSize(width: 1000, height: 1000))
         NSLayoutConstraint.activate([
-            changeStateButton.topAnchor.constraint(equalTo: bottomTextField.bottomAnchor, constant: 20),
-            changeStateButton.widthAnchor.constraint(equalToConstant: 200),
+            submitButton.topAnchor.constraint(equalTo: bottomTextField.bottomAnchor, constant: 20),
+            submitButton.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
+            
+            changeStateButton.topAnchor.constraint(equalTo: submitButton.bottomAnchor, constant: 20),
             changeStateButton.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
             
             orLabel.topAnchor.constraint(equalTo: changeStateButton.bottomAnchor, constant: 50),
             orLabel.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
-            orLabel.widthAnchor.constraint(equalToConstant: orLabelSize.width),
-            orLabel.heightAnchor.constraint(equalToConstant: orLabelSize.height),
             
             leadingDivider.leadingAnchor.constraint(equalTo: bottomTextField.leadingAnchor),
             leadingDivider.trailingAnchor.constraint(equalTo: orLabel.leadingAnchor, constant: -16),
@@ -157,7 +169,8 @@ class AuthenticationView: UIView {
             trailingDivider.centerYAnchor.constraint(equalTo: orLabel.centerYAnchor),
             
             googleSignInButton.topAnchor.constraint(equalTo: trailingDivider.bottomAnchor, constant: 50),
-            googleSignInButton.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor)
+            googleSignInButton.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
+            googleSignInButton.widthAnchor.constraint(equalToConstant: 198)
         ])
         
     }
